@@ -7,6 +7,9 @@ O sistema utiliza uma arquitetura de **Edge AI**, onde a inferência do modelo d
 ![Visualização 3D dos Embeddings](img/dim.png)
 > *Visualização da distribuição semântica de palavras após redução de dimensionalidade (t-SNE).*
 
+![Visualização 3D dos Embeddings](img/linguagens.png)
+> *Visualização da distribuição semântica de palavras após redução de dimensionalidade (t-SNE).*
+
 ---
 
 ## Objetivo
