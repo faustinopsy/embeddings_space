@@ -1,9 +1,43 @@
+const STORAGE_KEY = 'rag_explorer_data_v1';
+
 const localVectorDB = {
-    embeddings: [],
+    embeddings: [], 
+    
+    init: function() {
+        const savedData = localStorage.getItem(STORAGE_KEY);
+        if (savedData) {
+            try {
+                this.embeddings = JSON.parse(savedData);
+                console.log(`[DB] Carregados ${this.embeddings.length} vetores do armazenamento local.`);
+            } catch (e) {
+                console.error("Erro ao carregar localStorage:", e);
+                this.embeddings = [];
+            }
+        }
+    },
+
+    _persist: function() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(this.embeddings));
+        } catch (e) {
+            console.error("Quota do LocalStorage excedida!", e);
+            alert("Memória cheia! Limpe alguns itens.");
+        }
+    },
     
     add: function(text, vector) {
-        const id = 'doc_' + this.embeddings.length;
-        this.embeddings.push({ id, text, vector, reducedVector: [] });
+        const exists = this.embeddings.find(item => item.text === text);
+        if (exists) return exists.id;
+
+        const id = 'doc_' + Date.now();
+        this.embeddings.push({ 
+            id, 
+            text, 
+            vector, 
+            reducedVector: [] 
+        });
+        
+        this._persist();
         return id;
     },
 
@@ -16,6 +50,10 @@ const localVectorDB = {
             this.embeddings[index].reducedVector = reducedVector;
         }
     },
+    
+    saveCoords: function() {
+        this._persist();
+    },
 
     getAll: function() {
         return this.embeddings;
@@ -23,6 +61,10 @@ const localVectorDB = {
 
     clear: function() {
         this.embeddings = [];
+        localStorage.removeItem(STORAGE_KEY);
     }
 };
-export {localVectorDB};
+
+localVectorDB.init();
+
+export { localVectorDB };

@@ -3,17 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>RAG Explorer - Debug Edition</title>
-    
     <script src="js/plotly-2.27.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
-
-    <script type="importmap">
-    {
-        "imports": {
-            "transformers": "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.14.0"
-        }
-    }
-    </script>
 </head>
 <body>
 
@@ -23,11 +14,8 @@
         <button class="secondary" onclick="window.rodarTSNE()">Recalcular 3D</button>
         <button class="secondary" onclick="window.limparTudo()">Limpar</button>
     </div>
-
     <div id="chart-container"></div>
-    
     <div id="status-bar">Sistema aguardando...</div>
-
     <div id="comparison-panel">
         <div style="color:#888; font-size:0.8em; text-transform: uppercase; letter-spacing: 1px;">Similaridade Semântica</div>
         <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;">
@@ -39,7 +27,6 @@
         <div class="comp-score" id="comp-result">0.0%</div>
         <div style="font-size:0.8em; text-align:center; color:#666">Cálculo base: Similaridade de Cosseno (384 dim)</div>
     </div>
-
     <script type="module" src="js/script.js" defer></script>
 </body>
 </html>
