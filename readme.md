@@ -43,7 +43,7 @@ Desenvolvido no contexto da disciplina de **IA Generativa do PPGI Uninove** (Mes
 1.  **Clone o repositório:**
     ```bash
     git clone [https://github.com/faustinopsy/embeddings_space.git](https://github.com/faustinopsy/embeddings_space.git)
-    cd rag-embedding-explorer
+    cd embeddings_space
     ```
 
 2.  **Estrutura de Modelos (Para execução Offline/Local):**
