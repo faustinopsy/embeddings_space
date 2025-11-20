@@ -3,7 +3,7 @@ import { localVectorDB } from './local-db.js';
 import { TSNE } from './tsne.js';
 
 env.allowRemoteModels = false;
-env.localModelPath = '../models/';
+env.localModelPath = 'https://faustinopsy.github.io/embeddings_space/models/';
 env.useBrowserCache = false; 
 
 let extractor = null;
