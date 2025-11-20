@@ -42,7 +42,7 @@ Desenvolvido no contexto da disciplina de **IA Generativa do PPGI Uninove** (Mes
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/faustinopsy?tab=repositories.git](https://github.com/faustinopsy?tab=repositories)
+    git clone [https://github.com/faustinopsy/embeddings_space.git](https://github.com/faustinopsy/embeddings_space.git)
     cd rag-embedding-explorer
     ```
 
